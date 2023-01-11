@@ -1,0 +1,75 @@
+body {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,119,1) 39%, rgba(0,53,255,1) 100%);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+
+}
+
+h1 {
+    font-size: 70px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+h1:hover {
+    transform: scale(1.2);
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+h1:not(:hover)  {
+    transform: scale(1);
+    transition: all 0.5s;
+}
+
+.admin {
+    text-align: end;
+    margin-right: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(400px,1fr));
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.card {
+    color: black;
+    margin: 10px 50px 50px 50px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.card:not(:hover) {
+    transition: all 0.5s;
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+#modal {
+    color: black;
+}
+
+.modal-body {
+    text-align: start;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+
