@@ -1,24 +1,51 @@
-body {
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,119,1) 39%, rgba(0,53,255,1) 100%);
-    color: white;
-    text-align: center;
-    overflow-x: hidden;
+h2 {
+    margin: 100px 0;
 }
 
-h1 {
-    font-size: 70px;
-    margin-top: 50px;
-    margin-bottom: 100px;
-}
-
-h1:hover {
+h2:hover {
     transform: scale(1.2);
     transition: all 0.5s;
     cursor: pointer;
 }
 
-h1:not(:hover)  {
+h2:not(:hover)  {
     transform: scale(1);
     transition: all 0.5s;
 }
+
+.delete-btn-laptop, .change-btn-laptop {
+    width: 100%;
+}
+
+.change-btn-laptop {
+    margin: 5px 0 10px 0;
+}
+
+.wrap-btn {
+    text-align: start;
+}
+
+.btn-add-laptop, .btn-add-service {
+    margin-left: 10px;
+    width: 250px;
+}
+
+.delete-btn-service, .change-btn-service {
+    width: 30%;
+}
+
+.delete-btn-service {
+    margin-right: 50px;
+}
+
+.user {
+    text-align: end;
+    margin-right: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+
+
+

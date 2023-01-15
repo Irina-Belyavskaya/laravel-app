@@ -1,0 +1,8 @@
+.form-group {
+    margin-top: 20px;
+}
+
+button[type="submit"] {
+    width: 120px;
+}
+
