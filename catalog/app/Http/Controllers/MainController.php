@@ -35,33 +35,30 @@ class MainController extends Controller
 
     public function create(Request $request, $param)
     {
+        $result = true;
         switch ($param) {
             case 'laptop':
-                $newComputer = Computer::create(array(
+                $result = Computer::create(array(
                     'name' => $request->input('name'),
                     'description' => $request->input('description'),
                     'producer' => $request->input('producer'),
                     'date' => $request->input('date'),
                     'price' => $request->input('price')
                 ));
-                if ($newComputer !== false)
-                    return redirect()->route('admin');
-                else
-                    dump('Error');
                 break;
             case 'service':
-                $newService = Service::create(array(
+                $result = Service::create(array(
                     'name' => $request->input('name'),
                     'term' => $request->input('term'),
                     'price' => $request->input('price')
                 ));
-                if ($newService !== false)
-                    return redirect()->route('admin');
-                else
-                    dump('Error');
                 break;
-            default:
-                return redirect()->route('admin');
+        }
+        if ($result !== false)
+            return redirect()->route('admin');
+        else  {
+            $errorInfo = ['code' => '422', 'message' => 'Unprocessable Entity. Invalid values.'];
+            return view('error',compact('errorInfo'));
         }
 
     }
@@ -70,6 +67,7 @@ class MainController extends Controller
     {
         $id = $request->input('id');
         $name = $request->input('name');
+        $result = true;
         switch ($name) {
             case 'laptop':
                 $result = Computer::where('id', $id)->delete();
@@ -77,6 +75,10 @@ class MainController extends Controller
             case 'service':
                 $result = Service::where('id', $id)->delete();
                 break;
+        }
+        if (!$result) {
+            $errorInfo = ['code' => '406', 'message' => 'Not acceptable.'];
+            return view('error',compact('errorInfo'));
         }
         return redirect()->route('admin');
     }
@@ -99,6 +101,31 @@ class MainController extends Controller
 
     public function update(Request $request)
     {
+        $id = $request->input('id');
+        $type = $request->input('type');
+        $result = true;
+        switch ($type) {
+            case 'laptop':
+                $result = Computer::where('id', $id)->update([
+                    'name' => $request->input('name'),
+                    'description' => $request->input('description'),
+                    'producer' => $request->input('producer'),
+                    'date' => $request->input('date'),
+                    'price' => $request->input('price')
+                ]);
+                break;
+            case 'service':
+                $result = Service::where('id', $id)->update([
+                    'name' => $request->input('name'),
+                    'term' => $request->input('term'),
+                    'price' => $request->input('price')
+                ]);
+                break;
+        }
+        if (!$result) {
+            $errorInfo = ['code' => '406', 'message' => 'Not acceptable.'];
+            return view('error',compact('errorInfo'));
+        }
         return redirect()->route('admin');
     }
 }

@@ -27,7 +27,9 @@
             <label for="price" class="form-label">Стоимость</label>
             <input type="text" class="form-control-sm" name="price" id="price" value="@yield('price')" required>
         </div>
+        @yield('hidden data')
         <button type="submit" class="btn btn-primary btn-submit-laptop">Сохранить</button>
         @csrf
     </form>
+    <script src="{{ URL::asset('js/validation.js') }}"></script>
 @endsection

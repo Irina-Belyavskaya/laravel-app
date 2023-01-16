@@ -28,4 +28,3 @@ Route::post('/admin/change', 'App\Http\Controllers\MainController@change')->name
 
 Route::post('/admin/update', 'App\Http\Controllers\MainController@update')->name('update');
 
-//Route::get('/',[MainController::class, 'index']);

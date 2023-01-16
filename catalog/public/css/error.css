@@ -1,0 +1,13 @@
+body {
+    background: black;
+    color: red;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 70px;
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+

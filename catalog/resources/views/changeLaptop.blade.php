@@ -25,3 +25,8 @@
 @section('price')
     {{ $computer->price }}
 @endsection
+
+@section('hidden data')
+    <input type="text" name="id" id="hiddenId" value="{{ $computer->id }}" hidden>
+    <input type="text" name="type" id="type" value="laptop" hidden>
+@endsection
